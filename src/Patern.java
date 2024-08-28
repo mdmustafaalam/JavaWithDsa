@@ -1,8 +1,9 @@
 public class Patern {
     public static void main(String[] args) {
         int n=5;
-        Patern1(n);
+//        Patern1(n);
 //        Patern2(n);
+        Patern3(n);
     }
     static void Patern1(int n){
         for (int i = 1; i <= n; i++) {
@@ -16,6 +17,15 @@ public class Patern {
     static void Patern2(int n){
         for (int i = 1; i <= n; i++) {
             for (int j = n; j > i-1 ; j--) {
+                System.out.print(" *");
+            }
+            System.out.println(" ");
+        }
+    }
+
+    static void Patern3(int n){
+        for (int i = 1; i <= n; i++) {
+            for (int j = n; j < n+i ; j++) {
                 System.out.print(" *");
             }
             System.out.println(" ");
