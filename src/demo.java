@@ -11,7 +11,6 @@ public class demo {
         static int lenOfLongSubarr(int[] arr, int n, int k) {
             HashMap<Integer, Integer> map = new HashMap<>();
             int sum = 0, maxLen = 0;
-            int ans=0;
 
             for (int i = 0; i < n; i++) {
                 sum += arr[i];
