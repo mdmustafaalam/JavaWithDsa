@@ -17,3 +17,13 @@ public class demo {
                 if (sum == k) {
                     maxLen = i + 1;
                 }
+                if (!map.containsKey(sum)) {
+                    map.put(sum, i);
+                }
+                if (map.containsKey(sum - k)) {
+                    maxLen = Math.max(maxLen, i - map.get(sum - k));
+                }
+            }
+            return maxLen;
+        }
+    }
