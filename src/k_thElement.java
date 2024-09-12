@@ -1,4 +1,3 @@
-import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -9,26 +8,32 @@ public class k_thElement {
         int[] arr1 = {2,3,6,7,9};
         int[] arr2 = {1,4,8,10};
 
-        kthElement(k, arr1, arr2);
-
+        int result = kthElement(k, arr1, arr2);
+        if (result != -1) {
+            System.out.println(k + "-th element is: " + result);
+        } else {
+            System.out.println("Invalid value of k.");
+        }
+        sc.close();
     }
 
-    static long kthElement(int k, int arr1[], int arr2[]) {
-            int first = arr1.length;
-            int second = arr2.length;
-            long[] result = new long[first + second];
+    static int kthElement(int k, int arr1[], int arr2[]) {
+        int first = arr1.length;
+        int second = arr2.length;
+        int[] result = new int[first + second];
 
-            System.arraycopy(arr1, 0, result, 0, first);
-            System.arraycopy(arr2, 0, result, first, second);
+        // Merging the two arrays
+        System.arraycopy(arr1, 0, result, 0, first);
+        System.arraycopy(arr2, 0, result, first, second);
 
+        // Sorting the merged array
+        Arrays.sort(result);
 
-            Arrays.sort(result);
-            System.out.println(result);
-            for(int i=0;i<result.length;i++){
-                if(result[i]==k){
-                    return i;
-                }
-            }
-            return -1;
+        // Checking if k is within bounds
+        if (k > 0 && k <= result.length) {
+            return result[k - 1]; // k-th element in the sorted array (1-based index)
+        } else {
+            return -1; // Invalid k
+        }
     }
 }
