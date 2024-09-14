@@ -31,7 +31,23 @@ public class ElementsRange {
             }
         }
 
+        // count the number of negative elements in the range
+        int count = 0;
+        for (int i = 0; i <= range && i < n; i++) {
 
+            // if any element is positive, then the array is not equal
+            if (arr[i] > 0) return false;
+
+                // increment count for every negative element
+            else
+                count++;
+        }
+
+        // if the count is not equal to the range + 1, then the array is not equal
+        if (count != (range + 1)) return false;
+
+        // if all conditions are passed, the array is equal
+        return true;
     }
 }
 
