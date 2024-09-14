@@ -18,6 +18,6 @@ class RearrageArray {
             if (arr1[j] < min)
                 min = arr1[j];
         }
-        return (max, min);
+        return max;
     }
 }
