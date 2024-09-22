@@ -10,8 +10,10 @@ public class ExceptionallyOdd {
     static int getOddOccurrence(int[] arr) {
         // code here
         int res = 0;
-        for (int i = 0; i < arr.length; i++)
+        for (int i = 0; i < arr.length; i++) {
             res = res ^ arr[i];
+        }
         return res;
+
     }
 }
